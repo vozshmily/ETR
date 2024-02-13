@@ -86,17 +86,25 @@
             }
         }
 
-                    newRow += '</select>' +
-                        '</td>' +
-                        '<td>' +
-                        '<select name="ItemList[' + $('[name="ItemList"]').length + '].Status" class="form-control status-dropdown">' +
-                        '<option value="Option1">Option 1</option>' +
-                        '<option value="Option2">Option 2</option>' +
-                        '</select>' +
-                        '</td>' +
-                        '<td><input name="ItemList[' + $('[name="ItemList"]').length + '].Remarks" class="form-control" /></td>' +
-                        '<td><button type="button" class="btn btn-danger btn-sm delete-btn">X</button></td>' +
-                        '</tr>';
+                    var newRow = '<tr>' +
+                    '<td><input name="ItemList[' + $('[name="ItemList"]').length + '].Time" class="form-control" /></td>' +
+                    '<td>' +
+                    '<select name="ItemList[' + $('[name="ItemList"]').length + '].EquipmentStatus" class="form-control" id="equipmentStatus_' + $('[name="ItemList"]').length + '">' +
+                    '<option value=""> </option>' +
+                    '<option value="Idle">Idle</option>' +
+                    '<option value="Operational Billable">Operational Billable</option>' +
+                    '<option value="Breakdown">Breakdown</option>' +
+                    '<option value="Operational Non-Billable">Operational Non-Billable</option>' +
+                    '</select>' +
+                    '</td>' +
+                    '<td>' +
+                    '<select name="ItemList[' + $('[name="ItemList"]').length + '].Status" class="form-control status-dropdown">' +
+
+                    '</select>' +
+                    '</td>' +
+                    '<td><input name="ItemList[' + $('[name="ItemList"]').length + '].Remarks" class="form-control" /></td>' +
+                    '<td><button type="button" class="btn btn-danger btn-sm delete-btn">X</button></td>' +
+                    '</tr>';
                 $('#itemListTable tbody').append(newRow);
             });
 
@@ -112,8 +120,60 @@
                 statusDropdown.empty(); // Clear existing options
                 if (selectedValue === "Idle") {
                     // Add IDLE status options
-                    statusDropdown.append('<option value="IdleOption1">Idle Option 1</option>');
-                    statusDropdown.append('<option value="IdleOption2">Idle Option 2</option>');
+                    statusDropdown.append('<option value="IdleOption1">WAITING FOR PTO</option>');
+                    statusDropdown.append('<option value="IdleOption2">UNWORKABLE GROUND</option>');
+                    statusDropdown.append('<option value="IdleOption3">WAITING FOR PROJECT\'S INSTRUCTION</option>');
+                    statusDropdown.append('<option value="IdleOption4">FORCE MAJEURE EVENT</option>');
+                    statusDropdown.append('<option value="IdleOption5">WEATHER DISTURBANCE</option>');
+                    statusDropdown.append('<option value="IdleOption6">WAITING FOR DELIVERY UNLOADING</option>');
+                    statusDropdown.append('<option value="IdleOption7">WAITING FOR CONCRETE POURING</option>');
+                    statusDropdown.append('<option value="IdleOption8">WAITING TO ASSIST IN CONCRETE POURING</option>');
+                    statusDropdown.append('<option value="IdleOption9">TRUCK BAN</option>');
+                    statusDropdown.append('<option value="IdleOption10">NO OPERATOR (C/O PROJECT)</option>');
+                    statusDropdown.append('<option value="IdleOption11">WAITING FOR PROJECT SITE\'S POWER SUPPLY < /option>');
+                    statusDropdown.append('<option value="IdleOption12">BILLABLE; FOR THIRD PARTY INSPECTION</option>');
+                    statusDropdown.append('<option value="IdleOption13">ERT (REQUEST BY PROJECT)</option>');
+                    statusDropdown.append('<option value="IdleOption14">ON-GOING INSTALLATION (BILLABLE)</option>');
+                    statusDropdown.append('<option value="IdleOption15">WAITING FOR PROJECT\'S INSTRUCTION(OPERATOR\'S ANTIGEN)</option>');
+                    statusDropdown.append('<option value="IdleOption16">EMERGENCY RESPONSE TEAM</option>');
+                    statusDropdown.append('<option value="IdleOption17">LUNCH BREAK</option>');
+                    statusDropdown.append('<option value="IdleOption18">LOCATION ISSUE (PROJECT)</option>');
+                    statusDropdown.append('<option value="IdleOption19">WAITING FOR PTI (GONDOLA)</option>');
+                    statusDropdown.append('<option value="IdleOption20">RELOCATION (PROJECT\'S REQUEST) < /option>');
+                    statusDropdown.append('<option value="IdleOption21">BREAK</option>');
+                    statusDropdown.append('<option value="IdleOption22">FOR THIRD PARTY INSPECTION</option>');
+                    statusDropdown.append('<option value="IdleOption23">ONGOING HAULING OF PARTS</option>');
+                    statusDropdown.append('<option value="IdleOption24">WAITING FOR PTI</option>');
+                    statusDropdown.append('<option value="IdleOption25">FOR ERECTION</option>');
+                    statusDropdown.append('<option value="IdleOption26">ONGOING ERECTION/INSTALLATION</option>');
+                    statusDropdown.append('<option value="IdleOption27">FOR COMMISSIONING</option>');
+                    statusDropdown.append('<option value="IdleOption28">FOR DISMANTLING</option>');
+                    statusDropdown.append('<option value="IdleOption29">ONGOING DISMANTLING</option>');
+                    statusDropdown.append('<option value="IdleOption30">FOR BACKLOADING</option>');
+                    statusDropdown.append('<option value="IdleOption31">ONGOING BACKLOAD</option>');
+                    statusDropdown.append('<option value="IdleOption32">NO PLATE</option>');
+                    statusDropdown.append('<option value="IdleOption33">NO PERMIT/PASS</option>');
+                    statusDropdown.append('<option value="IdleOption34">FOR REGISTRATION</option>');
+                    statusDropdown.append('<option value="IdleOption35">NO OPERATOR</option>');
+                    statusDropdown.append('<option value="IdleOption36">USED BY MEQ</option>');
+                    statusDropdown.append('<option value="IdleOption37">WORK STOPPAGE DUE TO ECQ</option>');
+                    statusDropdown.append('<option value="IdleOption38">WAITING FOR DIESEL DELIVERY</option>');
+                    statusDropdown.append('<option value="IdleOption39">CONDUCTING PATOS (PRE-INSTALL/ERECTION)</option>');
+                    statusDropdown.append('<option value="IdleOption40">BACKLOADED</option>');
+                    statusDropdown.append('<option value="IdleOption41">CODING</option>');
+                    statusDropdown.append('<option value="IdleOption42">ON-HOLD PROJECT</option>');
+                    statusDropdown.append('<option value="IdleOption43">NO OPERATION (YARD)</option>');
+                    statusDropdown.append('<option value="IdleOption44">NO RIGGER</option>');
+                    statusDropdown.append('<option value="IdleOption45">FOR SMOKE EMISSION</option>');
+                    statusDropdown.append('<option value="IdleOption46">NO PROJECT DEPLOYMENT</option>');
+                    statusDropdown.append('<option value="IdleOption47">DINNER BREAK</option>');
+                    statusDropdown.append('<option value="IdleOption48">PREVENTIVE MAINTENANCE</option>');
+                    statusDropdown.append('<option value="IdleOption49">CHANGE BUCKET/BREAKER</option>');
+                    statusDropdown.append('<option value="IdleOption50">NO OPERATOR (APE)</option>');
+                    statusDropdown.append('<option value="IdleOption51">EXPIRED 3RD PARTY</option>');
+                    statusDropdown.append('<option value="IdleOption52">FOR INSPECTION DUE TO EARTHQUAKE</option>');
+             
+
                 } else if (selectedValue === "Breakdown") {
                     // Add BREAKDOWN status options
                     statusDropdown.append('<option value="BreakdownOption1">SUB - STANDARD MATERIAL</option>');
